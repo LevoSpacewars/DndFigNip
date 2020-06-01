@@ -12,3 +12,8 @@ class TopBarMenu(Plane.Plane):
         h = windowHeight/s
         print(w)
         super(TopBarMenu, self).__init__(x,y, w , h , FORMAT = Plane.Format.MENU_X)
+
+        self.addSubject(Plane.Button(100,100,100,100))
+        self.addSubject(Plane.Button(100,100,100,100))
+        self.addSubject(Plane.Button(100,100,100,100))
+        self.addSubject(Plane.Button(100,100,100,100))

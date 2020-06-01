@@ -1,4 +1,5 @@
 import pyglet
+from pyglet.window import mouse
 import Plane
 import Ui
 from Plane import Format
@@ -11,10 +12,16 @@ label = pyglet.text.Label('Hello, world',
                           anchor_x='center', anchor_y='center')
 
 
-image = pyglet.resource.image('temp.png')
+image = pyglet.resource.image('Images/Maps/OIP.jpg')
 print(window.width)
 topmenu = Ui.TopBarMenu(window.width,window.height)
 plane = Plane.Plane(0,100,window.width,window.height/10,FORMAT = Format.MENU_X)
+class test():
+
+    @window.event
+    def on_mouse_press(x, y, button, modifiers):
+        print("pressed")
+        topmenu.onAction(a=(x,y))
 
 @window.event
 def on_draw():
@@ -23,7 +30,5 @@ def on_draw():
     label.draw()
     plane.draw()
     topmenu.draw()
-
-
 
 pyglet.app.run()
